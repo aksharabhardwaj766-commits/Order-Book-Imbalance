@@ -1,4 +1,5 @@
 import pandas as pd
+from scipy.stats import spearmanr
 
 def add_forward_returns(df: pd.DataFrame, horizons:list[float]) -> pd.DataFrame:
     df = df.sort_values('time').reset_index(drop=True)
