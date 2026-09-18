@@ -16,7 +16,7 @@ def add_forward_returns(df: pd.DataFrame, horizons:list[float]) -> pd.DataFrame:
             direction='forward'
         )
 
-        df[f'fwd_returns_{h}s'] = merged['mid_price_future'] - merged['mid_price']
+        df[f'fwd_returns_{h}s'] = (merged['mid_price_future'] - merged['mid_price'])/merged['mid_price']
 
         pass
     return df  
